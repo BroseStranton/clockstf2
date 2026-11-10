@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_padding"
+    android:background="@android:color/transparent">
+
+    <!-- Date above time -->
+    <LinearLayout
+        android:id="@+id/date_above_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingHorizontal="@dimen/widget_horizontal_padding">
+
+        <TextView
+            android:id="@+id/date_above_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jeu 5 nov"
+            android:textColor="@color/widget_date_color"
+            android:textSize="24sp"
+            android:gravity="center"
+          android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"/>
+
+        <TextView
+            android:id="@+id/time_above_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:08"
+            android:textColor="@color/widget_clock_color"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:gravity="center"
+          android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"/>
+    </LinearLayout>
+
+    <!-- Time above date (default) -->
+    <LinearLayout
+        android:id="@+id/time_above_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingHorizontal="@dimen/widget_horizontal_padding"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:08"
+            android:textColor="@color/widget_clock_color"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:gravity="center"
+          android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"/>
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jeu 5 nov"
+            android:textColor="@color/widget_date_color"
+            android:textSize="24sp"
+            android:gravity="center"
+          android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"/>
+    </LinearLayout>
+
+</FrameLayout>
