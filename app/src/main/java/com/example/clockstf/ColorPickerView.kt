@@ -26,7 +26,7 @@ class ColorPickerView @JvmOverloads constructor(
     private var selectionY = 0f
     private var selectionHue = 0f
 
-    interface OnColorChangedListener {
+ fun interface OnColorChangedListener {
         fun onColorChanged(color: Int)
     }
 
