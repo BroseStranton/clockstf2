@@ -4,18 +4,18 @@ on:
   push:
     branches: [ main, master ]
   pull_request:
-  workflow_dispatch:   # permet de lancer manuellement depuis l'onglet Actions
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # version fixe, évite la migration automatique vers Ubuntu 26
 
     steps:
       - name: Récupérer le code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Installer Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -23,8 +23,6 @@ jobs:
       - name: Installer le SDK Android
         uses: android-actions/setup-android@v3
 
-      # Le projet n'a pas de gradlew : on installe Gradle 7.6.4,
-      # compatible avec le plugin Android 7.4.2 utilisé par le projet.
       - name: Installer Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
