@@ -295,14 +295,13 @@
             android:background="@drawable/config_section_bg"
             android:padding="8dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/font_size_label"
-                android:textColor="@color/text_primary"
-                android:gravity="center"
-                android:id="@+id/font_size_value"
-                android:text="@string/font_size_default" />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/text_primary"
+    android:gravity="center"
+    android:id="@+id/font_size_value"
+    android:text="@string/font_size_default" />
 
             <LinearLayout
                 android:layout_width="match_parent"
