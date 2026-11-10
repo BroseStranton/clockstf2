@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04   # version fixe, évite la migration automatique vers Ubuntu 26
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Récupérer le code
@@ -20,8 +20,13 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Installer le SDK Android
-        uses: android-actions/setup-android@v3
+      # Le SDK Android est déjà installé sur le runner : on accepte
+      # seulement les licences et on s'assure que l'API 34 est présente.
+      - name: Préparer le SDK Android
+        run: |
+          SDKM=$(ls "$ANDROID_HOME"/cmdline-tools/*/bin/sdkmanager | head -1)
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" "platforms;android-34" "build-tools;34.0.0"
 
       - name: Installer Gradle
         uses: gradle/actions/setup-gradle@v4
